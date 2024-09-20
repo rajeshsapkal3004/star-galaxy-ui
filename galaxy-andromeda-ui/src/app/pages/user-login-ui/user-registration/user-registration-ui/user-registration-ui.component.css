@@ -1,0 +1,43 @@
+.example-radio-button{
+    margin-left: 7px;
+}
+mat-grid-tile {
+  background:#fafafa;
+}
+.width-50{width: 49%;}
+.ml-1{margin-left: 1%;}
+.ml-2{margin-left: 2%;}
+.width-100{width: 100%;}
+.width-25{width: 25%;}
+mat-card {
+    margin: 2em auto;
+    text-align: center;
+    background-color: rgb(231, 255, 249);
+    border-radius: 10%;
+}
+
+.example-container {
+    border: 2px solid #ccc; /* Add a border with a 1px width and a light gray color */
+    padding: 15px; /* Add some padding to the container for spacing */
+    border-radius: 10px; /* Optional: Add rounded corners */
+}
+
+.mat-grid-tile {
+    background: #fafafa;
+}
+
+.background-image {
+    /* Set the background properties as per your needs */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%; /* Ensure the container takes the full height */
+}
+
+.custom-toolbar {
+    background-color: #494d50; 
+    color: white;/* Change to your desired background color */
+    height: 40px; /* Change to your desired height */
+    border-radius: 5px;
+  }
+

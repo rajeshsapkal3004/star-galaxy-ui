@@ -1,0 +1,23 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.custom-toolbar {
+  background-color: #494d50; 
+  color: white;/* Change to your desired background color */
+  height: 50px; /* Change to your desired height */
+}
+
+
+/* Add application styles & imports to this file! */
+/* Angular Material */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.router-link-active {
+  background-color: #414548;
+}
+.no-border {
+  border-radius: 0px;
+}
+
+
+
