@@ -1,35 +1,61 @@
-<div style="height: 80vh;">
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+ 
+  <div fxLayout="column" fxFlexFill>
+    <mat-toolbar class="custom-toolbar mat-elevation-z8 p-0" fxLayout="row" >
+      <button mat-icon-button  (click)="drawer.toggle()" >
         <mat-icon>menu</mat-icon>
       </button>
-      <span>Responsive Navigation</span>
-      <span class="menu-spacer"></span>
-      <div fxShow="true" fxHide.lt-md>
-        <!-- The following menu items will be hidden on both SM and XS screen sizes -->
-        <a href="#" mat-button>Menu Item 1</a>
-        <a href="#" mat-button>Menu Item 2</a>
-        <a href="#" mat-button>Menu Item 3</a>
-        <a href="#" mat-button>Menu Item 4</a>
-        <a href="#" mat-button>Menu Item 5</a>
-        <a href="#" mat-button>Menu Item 6</a>
-      </div>
-    </mat-toolbar-row>
-  </mat-toolbar>
 
-  <mat-sidenav-container fxFlexFill>
-    <mat-sidenav #sidenav>
-      <mat-nav-list>
-        <a (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
-        <a href="#" mat-list-item>Menu Item 1</a>
-        <a href="#" mat-list-item>Menu Item 2</a>
-        <a href="#" mat-list-item>Menu Item 3</a>
-        <a href="#" mat-list-item>Menu Item 4</a>
-        <a href="#" mat-list-item>Menu Item 5</a>
-        <a href="#"mat-list-item>Menu Item 6</a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content fxFlexFill>Main content</mat-sidenav-content>
-  </mat-sidenav-container>
-</div>
+      <button mat-button routerLink="/" routerLinkActive="router-link-active">
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <div class="ml10">
+        <span>Star-Galaxy </span>
+      </div>
+
+      <span fxFlex></span>
+
+      <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+        <button mat-button routerLink="/user-registration" routerLinkActive="router-link-active no-border">Sign up</button>
+        <button mat-button routerLink="/user-login" routerLinkActive="router-link-active no-border">Sign In</button>
+        <button mat-button routerLink="/page3" routerLinkActive="router-link-active no-border">Page 3</button>
+        <button mat-button routerLink="/page4" routerLinkActive="router-link-active no-border">Page 4</button>
+        <button mat-button routerLink="/page5" routerLinkActive="router-link-active no-border">Page 5</button>
+        <button (click)="logout()" *ngIf="isLoggedIn" mat-button routerLinkActive="router-link-active no-border">Logout</button>
+        
+      </div>
+     
+     
+    </mat-toolbar>
+
+    <mat-drawer-container fxFlex autosize class="background">
+      <mat-drawer #drawer>
+        <div fxLayout="column">
+          <button mat-button routerLink="/user-registration" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">
+            <mat-icon class="mr-2">filter_1</mat-icon>Sign Up </button>
+          <mat-divider></mat-divider>
+          <button mat-button routerLink="/user-login" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">
+            <mat-icon class="mr-2">filter_2</mat-icon>Sign In</button>
+          <mat-divider></mat-divider>
+          <button mat-button routerLink="/page3" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">
+            <mat-icon class="mr-2">filter_3</mat-icon>Page 3</button>
+          <mat-divider></mat-divider>
+          <button mat-button routerLink="/page4" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">
+            <mat-icon class="mr-2">filter_4</mat-icon>Page 4</button>
+          <mat-divider></mat-divider>
+          <button mat-button routerLink="/page5" routerLinkActive="selected no-border txt-bold" fxLayoutAlign="start" class="py-2 pr-5">
+            <mat-icon class="mr-2">filter_5</mat-icon>Page 5</button>
+          <mat-divider></mat-divider>
+        </div>
+      </mat-drawer>
+  
+      <!--PAGES-->
+      <div style="display: inline;">
+        <router-outlet></router-outlet>
+      </div>
+  
+    </mat-drawer-container>
+  
+
+  </div>
+  

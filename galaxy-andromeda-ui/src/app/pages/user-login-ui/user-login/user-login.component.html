@@ -1,1 +1,28 @@
-<p>user-login works!</p>
+<div class="signin-content">
+	<mat-card>
+	  <mat-card-content>
+		<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+		<mat-toolbar class="login-toolbar" color="primary">Login</mat-toolbar>
+
+		  <mat-form-field class="full-width-input mt20">
+			<input matInput placeholder="User" formControlName="username" required>
+			<mat-error *ngIf="isFieldInvalid('username')">
+			  Please inform your user name
+			</mat-error>
+		  </mat-form-field>
+
+
+			<mat-form-field class="full-width-input">
+			<input matInput type="password" placeholder="Password" formControlName="password" required>
+			<mat-error *ngIf="isFieldInvalid('password')">
+			  Please inform your password
+			</mat-error>
+
+
+		  </mat-form-field>
+		  <button mat-raised-button color="primary" type="submit">Login</button>
+		</form>
+	  </mat-card-content>
+	</mat-card>
+  </div>
